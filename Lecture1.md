@@ -43,9 +43,9 @@
 - **_Lab_**
   - _*hostname -I*_ : It will give the Ip where the vm is running.
   - _*pwd*_ : Show current directory path
-- _*cd /path*_ : Change to specific directory
-- _*cd ~*_ : Go to home directory
-- _*cd ..*_ : Go to one level
-- _*ls*_ : List files in current directory
-- _*ls -la*_ : List all files with details (including hidden)
-- _*tree*_ : Visual directory structure (may need to install)
+  - _*cd /path*_ : Change to specific directory
+  - _*cd ~*_ : Go to home directory
+  - _*cd ..*_ : Go to one level
+  - _*ls*_ : List files in current directory
+  - _*ls -la*_ : List all files with details (including hidden)
+  - _*tree*_ : Visual directory structure (may need to install)
