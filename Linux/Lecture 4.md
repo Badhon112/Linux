@@ -103,3 +103,20 @@
   - uptime : System uptime and load average
   - vmstat : Virtual memory statistics
   - iostat : CPU and I/O statistics (install sysstat)
+
+- Cleaning and Maintenance
+  - sudo dnf clean all : Clear package cache
+  - sudo dnf autoremove : Remove unused dependencies
+  - sudo dnf check : Verify package database
+  - dnf list obsoletes : Find obsolete packages
+- Cache Location :
+  - /var/cache/dnf/ - Cache location (can grow large)
+  - Regular maintenance keeps system clean
+
+- TroubleShooting package Issues :
+  - Broken dependencies : sudo dnf install --skip-broken
+  - Locked database : Remove /var/run/dnf.lock
+  - GPG key errors : import key with rum --import
+  - Conflicting packages : Use dnf remove conflicting-package first
+  - Network issues : Check network, firewall, proxy settings
+  - sudo dnf makecache : Refresh repository metadata
