@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: log-collector
+spec:
+  selector:
+    matchLabels:
+      role: frontend
+      app: frontend
+  template:
+    metadata:
+      labels:
+        role: frontend
+        app: frontend
+    spec:
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
+      containers:
+        - name: nginx-pod
+          image: nginx
+          resources:
+            requests:
+              cpu: "120Mi"
+              memory: "100M"
+            limits:
+              cpu: "150Mi"
+              memory: "150M"
+          volumeMounts:
+            - name: www
+              mountPath: /usr/share/www/html
+      volumes:
+        - name: www
+          hostPath:
+            path: /home/badhon

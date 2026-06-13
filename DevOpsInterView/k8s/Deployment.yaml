@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchlabels:
+      app: frontend
+      role: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+        role: frontend
+    spec:
+      containers:
+        - name: nginx-pod
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "120Mi" # Mebibyte It is a unit of digital memory
+              memory: "100M" # M Megabytes . Little m stand for millibytes
+            limits:
+              cpu: "150Mi"
+              memory: "150M"
