@@ -356,3 +356,37 @@ spec:
   ```bash
 
   ```
+
+- **Understanding Node Affinity, Pod Affinity, Node Selector, and Pod Anti-affinity in Kubernetes Deployments**
+  - _Node Selector_ : Node Selector is the simplest scheduling mechanism. It allows you to specific a key-value pair, and k8s schedules pods only on node with matching labels.
+  - _Node Affinity_ : Node Affinity provides advanced scheduling options compared to Node selector. It allows you to use logical operators like In, NotIn, Exists, and more.
+  - _Pod Affinity_ : Pod Affinity allows you to schedule pods closer to other pods with specific labels, improving inter-pod communication.
+  - _Node Pod Affinity_ : Node Pod Affinity ensures that pods do not run on certain nodes
+
+```bash
+apiVersion: v1
+kind: Pods
+metadata:
+  name: node-selector-pod
+spec:
+  containers:
+    - name: nginx-pod-selector
+      image: nginx
+      nodeSelector:
+        color: blue
+```
+
+- **Explain the Kubelet and Kube-proxy**
+  - Kubelet and kube-proxy are the two essential agent process that run on every worker node in a k8s cluster.
+  - _kubelet_ : Kubelet is the primary node agent. that run directly on the host machine OS rather than inside a container. Its main mandate is ensuring that the pod are running on node and check the health of that pods.
+  - _kube-proxy_ : Kube-proxy is a network proxy that manages internal and external cluster networking rules on each node.
+
+- **How to perform a 'Rolling Update' and 'Rollback' in K8s?**
+  - 'kubectl rollout history deployment nginx-deploy'
+  - 'kubectl rollout undo deployment nginx-deploy --to-revision=2'
+
+- **What is Helm'? Why is it called the K8s Package Manager?**
+  - Helm is an open source package manager for k8s that automates the creation, packaging, configuration, and deployment of application onto a cluster.
+
+- **Explain Init Containers.**
+  - 
