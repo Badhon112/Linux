@@ -1,0 +1,16 @@
+version: '2'
+services:
+  nginx: 
+    build:  
+      context: ./ser
+      dockerfile: dockerfile
+    container_name: nginx
+    ports:
+      - 3000:3000 # -p <Host Port>:<Container Port>
+    volumes:
+      - data_base:/data/db
+
+volumes:
+  data_base:
+
+  
