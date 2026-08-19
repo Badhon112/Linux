@@ -389,4 +389,10 @@ spec:
   - Helm is an open source package manager for k8s that automates the creation, packaging, configuration, and deployment of application onto a cluster.
 
 - **Explain Init Containers.**
-  - 
+  - Init container are specialized, short-lived containers that runs to completion before the main application containers start inside a k8s Pod.
+
+- **How does kubernetes decide where to schedule a pod**
+  - THere are 3 steps.
+  - Filtering
+  - Scoring
+  - binding
