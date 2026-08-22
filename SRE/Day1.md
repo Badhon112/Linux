@@ -34,3 +34,22 @@ ELK stack is a set of open-source tools that allow us to monitor, collect, proce
 ```bash
 $ https://github.com/harishnshetty/ELK-Stack-TLS-SSL-Full-Setup-DevSecops-Project
 ```
+
+---
+
+# ELK
+
+- **ELK**
+  - E = ElasticSearch
+  - L = LogStack
+  - K = Kibana
+
+- **FileBeat**
+  - File Beat is a tool that collect log
+- **LogStack**
+  - That will content the log from the File beat and the port is 5044
+
+From the application filebeat will send the data to the LogStack[parse the data] structured data. Now ElasticSearch it will index the data, and it will easily and fastly accessible. and it will send to kibana it is a visualization tool.
+
+## Implement
+
