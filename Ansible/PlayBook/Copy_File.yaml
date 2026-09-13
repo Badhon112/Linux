@@ -1,0 +1,13 @@
+---
+- name: Copying files to remote
+  hosts: all
+
+  tasks:
+    - name: Copy files
+      copy:
+        src: /etc/ansible/first.yaml
+        dest: /tmp/
+        owner: newuser
+        group: newuser
+        mode: 0777
+        backup: true

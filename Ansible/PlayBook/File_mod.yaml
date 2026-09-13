@@ -1,0 +1,16 @@
+---
+- name: File Module
+  hosts: all
+
+  tasks:
+    - name: Creating a File
+      file:
+        path: /tmp/newfile.txt
+        state: touch
+        owner: newuser
+        group: newuser
+        mode: 777
+    - name: Creating a directory
+      file:
+        path: /tmp/myFolder
+        state: directory

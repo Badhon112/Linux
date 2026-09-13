@@ -1,0 +1,15 @@
+---
+- name: Install and Start nginx
+  hosts: webserver # Assuming 'webserver' is defined in your Ansible inventory
+  become: true
+
+  tasks:
+    - name: Install Nginx
+      yum: # Using the yum module for package management module for package
+        name: nginx # Name of the package
+        state: present # Ensure the package is installed
+    - name: Start Nginx
+      service: # Using the service module to manage the service
+        name: nginx
+        state: started
+        enabled: true # Ensure Nginx is enabled to start on boot

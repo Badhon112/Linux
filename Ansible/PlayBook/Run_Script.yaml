@@ -1,0 +1,6 @@
+- name: Run a Script
+  hosts: all
+  
+  tasks:
+    - name: Run Script
+      shell: /tmp/script/test.sh
